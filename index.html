@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dosa House — Authentic South Indian restaurant on Dimna Rd, Mango, Jamshedpur. View menu, hours, and order online via Swiggy." />
+  <title>Dosa House — Jamshedpur</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER & NAVIGATION ===== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#top" class="brand">Dosa House</a>
+
+      <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary Navigation">
+        <a href="#menu">Menu</a>
+        <a href="#visit">Visit</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#reserve">Reserve</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero section">
+      <div class="container hero-inner">
+        <div class="status-pill" aria-live="polite">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="statusText">Checking hours...</span>
+        </div>
+
+        <h1>South Indian staples, served crisp.</h1>
+
+        <p class="hero-subtitle">
+          01, Dimna Rd, Baglagora, Mango, Jamshedpur · ₹1–200 per person · Open daily 8:00 AM – 10:00 PM
+        </p>
+
+        <div class="hero-actions">
+          <a
+            href="https://www.swiggy.com/city/jamshedpur/dosa-house-sakchi-rest1469082?utm_source=GooglePlaceOrder&amp;utm_campaign=GoogleMap&amp;is_retargeting=true&amp;media_source=GooglePlaceOrder"
+            class="btn btn-swiggy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Order on Swiggy &rarr;
+          </a>
+          <a href="#menu" class="btn btn-outline">View Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MENU ===== -->
+    <section id="menu" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Pure Vegetarian Kitchen</p>
+          <h2>Menu</h2>
+        </div>
+
+        <div class="menu-controls">
+          <div class="search-wrap">
+            <label for="menuSearch" class="sr-only">Search dishes</label>
+            <input type="search" id="menuSearch" class="search-input" placeholder="Search dosa, idli, filter coffee..." autocomplete="off" />
+          </div>
+
+          <div class="filter-actions">
+            <button type="button" id="bestsellerToggle" class="chip" aria-pressed="false">Bestsellers</button>
+
+            <label for="priceSort" class="sr-only">Sort by price</label>
+            <select id="priceSort" class="select-input">
+              <option value="default">Sort: Featured</option>
+              <option value="asc">Price: Low to High</option>
+              <option value="desc">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Tabs and dishes are filled in by script.js -->
+        <div class="category-tabs" id="categoryTabs" role="tablist" aria-label="Menu Categories"></div>
+        <div id="menuGrid" class="menu-grid" aria-live="polite"></div>
+        <p id="emptyState" class="empty-state hidden">No dishes match your search or filter.</p>
+      </div>
+    </section>
+
+    <!-- ===== VISIT & POPULAR TIMES ===== -->
+    <section id="visit" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Location &amp; Hours</p>
+          <h2>Visit Dosa House</h2>
+        </div>
+
+        <div class="visit-grid">
+          <div class="visit-card">
+            <div class="info-block">
+              <h3>Address</h3>
+              <p id="shopAddress">01, Dimna Rd, Baglagora, Mango, Jamshedpur, Jharkhand 831012</p>
+              <div class="inline-actions">
+                <button type="button" id="copyAddressBtn" class="text-btn">Copy Address</button>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Dosa+House+Dimna+Rd+Baglagora+Mango+Jamshedpur+831012"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-btn"
+                >Open in Maps &nearr;</a>
+              </div>
+            </div>
+
+            <div class="info-block">
+              <h3>Contact</h3>
+              <p><a href="tel:08825329500" class="plain-link">088253 29500</a></p>
+            </div>
+
+            <div class="info-block">
+              <h3>Hours</h3>
+              <p>Monday – Sunday: 8:00 AM – 10:00 PM</p>
+            </div>
+
+            <div class="info-block">
+              <h3>Average Cost</h3>
+              <p>₹1–200 per person</p>
+            </div>
+          </div>
+
+          <div class="visit-card">
+            <div class="popular-header">
+              <h3>Popular Times</h3>
+              <span class="muted-note">6 PM: Usually a little busy</span>
+            </div>
+
+            <!-- Day buttons and bars are filled in by script.js -->
+            <div class="day-selector" id="daySelector" role="tablist" aria-label="Select day of week"></div>
+            <div class="bar-chart" id="popularChart" aria-label="Hourly footfall chart"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REVIEWS ===== -->
+    <section id="reviews" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Guest Feedback · 3.4 ★</p>
+          <h2>Reviews</h2>
+        </div>
+
+        <div class="reviews-layout">
+          <div id="reviewsList" class="reviews-list"></div>
+
+          <form id="reviewForm" class="minimal-form" novalidate>
+            <h3>Share your experience</h3>
+
+            <div class="form-group">
+              <label for="reviewerName">Your Name</label>
+              <input type="text" id="reviewerName" placeholder="e.g. Ananya Sharma" required />
+              <small class="error-msg" id="reviewerNameError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="reviewerRating">Rating</label>
+              <select id="reviewerRating" required>
+                <option value="5">5 ★ — Excellent</option>
+                <option value="4" selected>4 ★ — Good</option>
+                <option value="3">3 ★ — Average</option>
+                <option value="2">2 ★ — Below Average</option>
+                <option value="1">1 ★ — Poor</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="reviewerComment">Review</label>
+              <textarea id="reviewerComment" rows="3" placeholder="Tell us about the food or service..." required></textarea>
+              <small class="error-msg" id="reviewerCommentError"></small>
+            </div>
+
+            <button type="submit" class="btn btn-dark">Post Review</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TABLE RESERVATION ===== -->
+    <section id="reserve" class="section">
+      <div class="container reserve-container">
+        <div class="section-header">
+          <p class="eyebrow">Dine In</p>
+          <h2>Reserve a Table</h2>
+        </div>
+
+        <form id="reservationForm" class="minimal-form" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="guestName">Full Name</label>
+              <input type="text" id="guestName" placeholder="Your full name" required />
+              <small class="error-msg" id="guestNameError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="guestPhone">Mobile Number (10 digits)</label>
+              <input type="tel" id="guestPhone" placeholder="9876543210" maxlength="10" required />
+              <small class="error-msg" id="guestPhoneError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="guestEmail">Email Address</label>
+              <input type="email" id="guestEmail" placeholder="you@example.com" required />
+              <small class="error-msg" id="guestEmailError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="guestCount">Guests (1–20)</label>
+              <input type="number" id="guestCount" min="1" max="20" value="2" required />
+              <small class="error-msg" id="guestCountError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="reserveDate">Date</label>
+              <input type="date" id="reserveDate" required />
+              <small class="error-msg" id="reserveDateError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="reserveTime">Time Slot</label>
+              <select id="reserveTime" required>
+                <option value="">Select a time</option>
+                <option value="08:30">8:30 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="14:00">2:00 PM</option>
+                <option value="17:30">5:30 PM</option>
+                <option value="19:00">7:00 PM</option>
+                <option value="20:30">8:30 PM</option>
+              </select>
+              <small class="error-msg" id="reserveTimeError"></small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="specialNotes">Special Requests (Optional)</label>
+            <input type="text" id="specialNotes" placeholder="Window seating, less spicy sambar, etc." />
+          </div>
+
+          <button type="submit" class="btn btn-dark">Confirm Reservation</button>
+        </form>
+
+        <div id="savedBooking" class="saved-booking hidden" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="currentYear"></span> Dosa House, Jamshedpur.</p>
+      <p class="muted-note">01, Dimna Rd, Baglagora, Mango · 088253 29500</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
